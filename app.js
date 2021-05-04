@@ -19,18 +19,20 @@ app.use(
   })
 );
 
-// mongoose
-//   .connect(
-//     `mongodb+srv://${process.env.MONGO_USER}:
-//   ${process.env.MONGO_PASSWORD}@mernstack.3ce3y.mongodb.net/
-//   ${process.env.MONGO_DB}?retryWrites=true&w=majority`
-//   )
-//   .then(() => {
-//     app.listen(4000);
-//   })
-//   .catch((err) => {
-//     throw err;
-//   });
+mongoose
+  .connect(
+    `mongodb+srv://${process.env.MONGO_USER}:${
+        process.env.MONGO_PASSWORD
+    }@mernstack.3ce3y.mongodb.net/${
+        process.env.MONGO_DB
+    }?retryWrites=true&w=majority`
+  )
+  .then(() => {
+    app.listen(4000);
+  })
+  .catch((err) => {
+    throw err;
+  });
 
 
-app.listen(4000);
+// app.listen(4000);
